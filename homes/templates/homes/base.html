@@ -1,0 +1,93 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Library Mnagement system</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'homes/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="{% static 'homes/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'homes/css/coming-soon.min.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="{% url 'lms:LandingPage' %}">Aminat Library</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'register:login' %}">Login
+                  <!--<span class="sr-only">(current)</span>-->
+                </a>
+              </li>
+              <li class="nav-item active">
+                
+                <a class="nav-link" href="{% url 'register:SignUp' %}">Sign up</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">About us</a>
+              </li>
+              {% if user.is_authenticated%}
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'register:logout' %}">Logout</a>
+              </li>
+              {% endif%}
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+{% block content %}
+
+{% endblock %}
+
+
+  <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+        </div>
+    <!-- /.container -->
+    </footer>
+    
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'homes/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'homes/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    
+      <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'homes/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'homes/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- Custom scripts for this template -->
+    <script src="{% static 'homes/js/coming-soon.min.js' %}"></script>
+
+
+    
+    
+</body>
+    
+</html>
+    
+
+    
